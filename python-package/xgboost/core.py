@@ -207,6 +207,7 @@ def _load_lib() -> ctypes.CDLL:
             setattr(lib, "path", os.path.normpath(lib_path))
             lib_success = True
         except OSError as e:
+            raise e
             os_error_list.append(str(e))
             continue
         finally:
@@ -214,6 +215,9 @@ def _load_lib() -> ctypes.CDLL:
     if not lib_success:
         libname = os.path.basename(lib_paths[0])
         raise XGBoostError(
+            
+            f"Try to find {lib_paths}"
+        +
             f"""
 XGBoost Library ({libname}) could not be loaded.
 Likely causes:

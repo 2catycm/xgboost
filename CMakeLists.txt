@@ -66,9 +66,9 @@ option(RABIT_MOCK "Build rabit with mock" OFF)
 option(HIDE_CXX_SYMBOLS "Build shared library and hide all C++ symbols" OFF)
 option(KEEP_BUILD_ARTIFACTS_IN_BINARY_DIR "Output build artifacts in CMake binary dir" OFF)
 ## CUDA
-option(USE_CUDA  "Build with GPU acceleration" OFF)
+option(USE_CUDA  "Build with GPU acceleration" ON)
 option(USE_PER_THREAD_DEFAULT_STREAM "Build with per-thread default stream" ON)
-option(USE_NCCL  "Build with NCCL to enable distributed GPU support." OFF)
+option(USE_NCCL  "Build with NCCL to enable distributed GPU support." ON)
 option(BUILD_WITH_SHARED_NCCL "Build with shared NCCL library." OFF)
 set(GPU_COMPUTE_VER "" CACHE STRING
   "Semicolon separated list of compute versions to be built against, e.g. '35;61'")
